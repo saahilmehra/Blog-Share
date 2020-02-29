@@ -117,6 +117,7 @@
                 android:textAppearance="?android:textAppearanceSmall"
                 android:textColor="@android:color/white"
                 tools:text="Log In" />
+
         </LinearLayout>
     </ScrollView>
 
