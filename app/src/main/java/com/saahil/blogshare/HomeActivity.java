@@ -5,8 +5,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -53,7 +53,10 @@ public class HomeActivity extends AppCompatActivity implements PostAdapter.ItemC
 
     @Override
     public void onItemClicked(int index) {
-        Toast.makeText(this, "surname: "+arrayList.get(index).getTitle(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "surname: "+arrayList.get(index).getId(), Toast.LENGTH_SHORT).show();
+        Intent i=new Intent(HomeActivity.this, PostDetailActivity.class);
+        i.putExtra("id", arrayList.get(index).getId());
+        startActivity(i);
     }
 
     private void getPosts(){
@@ -75,7 +78,6 @@ public class HomeActivity extends AppCompatActivity implements PostAdapter.ItemC
             @Override
             public void onFailure(Call<ArrayList<Posts>> call, Throwable t) {
                 Toast.makeText(HomeActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
-                Log.e("a",t.getMessage());
                 progressDialog.dismiss();
             }
         });

@@ -3,11 +3,21 @@ package com.saahil.blogshare;
 public class Posts {
     private String title, body;
     private String publish;
+    private int id;
 
-    public Posts(String title, String publish, String body) {
+    public Posts(int id, String title, String publish, String body) {
+        this.id=id;
         this.title = title;
         this.publish = publish;
         this.body = body;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {
