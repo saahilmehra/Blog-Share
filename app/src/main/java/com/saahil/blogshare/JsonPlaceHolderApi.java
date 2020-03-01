@@ -26,4 +26,8 @@ public interface JsonPlaceHolderApi {
     @Headers("Authorization:Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTgzODU1MDAxLCJqdGkiOiIwMjg5MTdlZDE3OGI0OGI3OTBkYzM5ZjQ2ZmI4MWZlNCIsInVzZXJfaWQiOjF9.tNUH7YDWQpP6QfWwozzm6AALDlQZPzn1GrDcO6EO7N4")
     @GET("blog/api/{id}/")
     Call<Posts> getPost(@Path("id") int id);
+
+    @Headers("Authorization:Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTgzODU1MDAxLCJqdGkiOiIwMjg5MTdlZDE3OGI0OGI3OTBkYzM5ZjQ2ZmI4MWZlNCIsInVzZXJfaWQiOjF9.tNUH7YDWQpP6QfWwozzm6AALDlQZPzn1GrDcO6EO7N4")
+    @POST("blog/api/")
+    Call<Posts> addPost(@Body Posts post);
 }

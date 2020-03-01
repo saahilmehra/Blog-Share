@@ -7,6 +7,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -24,6 +28,7 @@ public class HomeActivity extends AppCompatActivity implements PostAdapter.ItemC
     ArrayList<Posts> arrayList;
     JsonPlaceHolderApi jsonPlaceHolderApi;
     ProgressDialog progressDialog;
+    Button btnAddPost;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +54,15 @@ public class HomeActivity extends AppCompatActivity implements PostAdapter.ItemC
         recyclerView.setLayoutManager(layoutManager);
 
         getPosts();
+
+        btnAddPost=findViewById(R.id.btnAddPost);
+        btnAddPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(HomeActivity.this, AddPostActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
