@@ -42,7 +42,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
         }
     }
 
-
     @NonNull
     @Override
     public PostAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -56,7 +55,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
         viewHolder.tvTitle.setText(post.get(i).getTitle());
         viewHolder.tvPublished.setText("Published on "+post.get(i).getPublished());
         viewHolder.tvBody.setText(post.get(i).getBody());
-
     }
 
     @Override

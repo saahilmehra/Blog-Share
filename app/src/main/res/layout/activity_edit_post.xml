@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PostDetailActivity"
+    tools:context=".AddPostActivity"
     android:fillViewport="true">
 
     <LinearLayout
@@ -14,41 +14,83 @@
         android:background="@drawable/back_design"
         android:gravity="center">
         <TextView
-            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Edit Post"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textColor="@android:color/white" />
+
+        <EditText
+            android:id="@+id/etTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@drawable/ed_design"
+            android:hint="Title"
             android:padding="10dp"
             android:textColor="@android:color/white"
             android:textColorHint="@android:color/white" />
-        <TextView
-            android:id="@+id/tvPublish"
+        <EditText
+            android:id="@+id/etSlug"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@drawable/ed_design"
+            android:hint="Slug"
             android:padding="10dp"
             android:textColor="@android:color/white"
             android:textColorHint="@android:color/white" />
-        <TextView
-            android:id="@+id/tvBody"
+        <EditText
+            android:id="@+id/etBody"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@drawable/ed_design"
+            android:hint="Body"
             android:padding="10dp"
             android:textColor="@android:color/white"
             android:textColorHint="@android:color/white" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbDraft"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Status"
+                android:layout_margin="10dp"
+                android:background="@drawable/ed_design"
+                android:padding="10dp"
+                android:textColor="@android:color/white" />
+
+            <RadioButton
+                android:id="@+id/rbPublished"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Published"
+                android:checked="true"
+                android:layout_margin="10dp"
+                android:background="@drawable/ed_design"
+                android:padding="10dp"
+                android:textColor="@android:color/white"/>
+        </RadioGroup>
+
         <Button
-            android:id="@+id/btnEdit"
+            android:id="@+id/btnEditPost"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@drawable/ed_design"
-            android:text="Edit"
+            android:text="Edit Post"
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="@android:color/white"
             android:padding="6dp"/>
+
     </LinearLayout>
 </ScrollView>
