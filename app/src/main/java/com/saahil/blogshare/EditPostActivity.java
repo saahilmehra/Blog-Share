@@ -119,7 +119,7 @@ public class EditPostActivity extends AppCompatActivity {
             etBody.setError("Required Field..");
             return;
         }
-        
+
         progressDialog2.setMessage("Loading...");
         progressDialog2.setCanceledOnTouchOutside(false);
         progressDialog2.show();

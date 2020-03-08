@@ -1,5 +1,9 @@
 package com.saahil.blogshare;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Posts {
     private String title, body;
     private String publish;
@@ -40,7 +44,17 @@ public class Posts {
     }
 
     public String getPublished() {
-        return publish;
+        String date;
+        Date temp_date=new Date();
+        SimpleDateFormat formatter1 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+        try {
+            temp_date= formatter1.parse(publish.substring(0,19));
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        date=new SimpleDateFormat("dd MMM, yyyy").format(temp_date);
+        return date;
     }
 
     public void setPublished(String publish) {

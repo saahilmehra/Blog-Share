@@ -9,7 +9,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-
 import java.util.ArrayList;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
@@ -53,8 +52,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull PostAdapter.ViewHolder viewHolder, int i) {
         viewHolder.itemView.setTag(post.get(i));
         viewHolder.tvTitle.setText(post.get(i).getTitle());
-        viewHolder.tvPublished.setText("Published on "+post.get(i).getPublished());
         viewHolder.tvBody.setText(post.get(i).getBody());
+        viewHolder.tvPublished.setText("Published on "+post.get(i).getPublished());
     }
 
     @Override
